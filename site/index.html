@@ -14,7 +14,6 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/scrolling-nav.css" rel="stylesheet">
     <link href="css/jquery.fullpage.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
@@ -22,6 +21,8 @@
     <link id="czr-favicon" rel="icon" href="images/OWF-Logo-Favicon-32x32.png" type="image/png">
 
   </head>
+
+  <body>
 
     <!--Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -33,16 +34,16 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#section-one">Section 1</a>
+              <a class="nav-link" href="#section-one">Section 1</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#gapminder">Gapminder</a>
+              <a class="nav-link" href="#gapminder">Gapminder</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#colorado-river">Colorado River</a>
+              <a class="nav-link" href="#colorado-river">Colorado River</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#section-two">Section 2</a>
+              <a class="nav-link" href="#section-two">Section 2</a>
             </li>
           </ul>
         </div>
@@ -61,7 +62,7 @@
       <div class="section">
         <div class="container">
           <div class="row">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-12 mx-auto">
               <h2>Title Heading 1</h2>
               <p class="lead">Fusce in nisi auctor velit laoreet hendrerit. Integer libero odio, mattis eget eros et, eleifend pharetra tellus. Nullam ultricies facilisis eros, at molestie felis. Nulla quam ligula, sollicitudin eu leo a, tristique dignissim orci. Curabitur pharetra aliquam vulputate. Fusce mauris ligula, facilisis at nisi sit amet, porta scelerisque justo. Morbi urna risus, pharetra sit amet est ut, ornare vulputate velit. Nunc vitae dui sed leo efficitur ornare. Proin malesuada blandit tincidunt. Cras lacinia molestie nunc sed posuere. Integer vitae lorem nulla. Sed suscipit interdum ipsum, id semper ligula dapibus vel.</p>
             </div>
@@ -143,32 +144,24 @@
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
-    <!--<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom JavaScript for this theme -->
-    <!--<script src="js/scrolling-nav.js"></script>-->
-
+    <!-- Fullpage minified Javscript file -->
     <script type="text/javascript" src="js/jquery.fullpage.min.js"></script>
 
-    <!--Fit.js library for div sizing-->
-    <script src="fit.js-master/fit.js"></script>
+    <script>
 
-  </body>
-
-  <script>
-
-    $(document).ready(function() {
-      $('#fullpage').fullpage({
-        anchors:['top','section-one','gapminder', 'colorado-river', 'section-two', 'copyright'],
-        sectionsColor:['#9DB66B','','','','','#5A5A5A'],
-        navigation:true,
-        navigationPosition:'right',
-        navigationTooltips:['OWF Visualizations','Section 1','Gapminder', 'Colorado River', 'Section 2', 'Copyright']
+      $(document).ready(function() {
+        $('#fullpage').fullpage({
+          anchors:['top','section-one','gapminder', 'colorado-river', 'section-two', 'copyright'],
+          sectionsColor:['#9DB66B','','','','','#5A5A5A'],
+          navigation:true,
+          navigationPosition:'right',
+          navigationTooltips:['OWF Visualizations','Section 1','Gapminder', 'Colorado River', 'Section 2', 'Copyright']
+        });
       });
-    });
-  </script>
+    </script>
 
 </html>
