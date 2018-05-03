@@ -68,6 +68,11 @@ $(document).ready(function() {
 ```
 See more configuration options at [fullpage options](https://github.com/alvarotrigo/fullPage.js#options)
 
+## Bootstrap
+For convenience and simplicity this page implements the use of the [bootsrap](https://getbootstrap.com/) JavaScript library to organize the contents in each section.  
+in general, this page utilizes the [grid system](https://getbootstrap.com/docs/4.0/layout/grid/) that bootstrap provides to help automatically size width of divs.
+Other bootstrap classes are used for [centering text](https://getbootstrap.com/docs/4.0/utilities/text/).
+
 ## Resources
 
 * [fullPage.js](https://alvarotrigo.com/fullPage/)
