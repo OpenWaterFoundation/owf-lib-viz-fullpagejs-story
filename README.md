@@ -71,7 +71,32 @@ See more configuration options at [fullpage options](https://github.com/alvarotr
 ## Bootstrap
 For convenience and simplicity this page implements the use of the [bootsrap](https://getbootstrap.com/) JavaScript library to organize the contents in each section.  
 in general, this page utilizes the [grid system](https://getbootstrap.com/docs/4.0/layout/grid/) that bootstrap provides to help automatically size width of divs.
-Other bootstrap classes are used for [centering text](https://getbootstrap.com/docs/4.0/utilities/text/).
+Other bootstrap classes are used for [centering text](https://getbootstrap.com/docs/4.0/utilities/text/).  
+The following example demonstrates placing an iframe containing a visualization next to a text description to go along with it. Everything is contained in a row element, the visualization is set to take up 8 width and the text is of width 4 to fill the remaining space in the grid:
+```html
+<div class="row">
+  <div class="col-lg-8">
+    <iframe data-src="http://viz.openwaterfoundation.org/co/owf-viz-co-snodas-gapminder/" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div class="col-lg-4">
+     <h2>Gapminder</h2>
+      <p>This visualization has been developed
+      to illustrate how snowpack changes in water supply basins throughout Colorado in a
+      water year.
+      The goal is to quickly gain an understanding of both the absolute and relative magnitude of water supply throughout Colorado.
+      The visualization illustrates how conditions in local and major basins vary in time and compare to each other.
+      The basins correspond to those used by the National Weather Service (NWS) River Forecast Centers (RFCs) and Northern Water.
+      ABRFC = Arkansas Basin,
+      CBRFC= Colorado Basin,
+      MBRFC = South Platte (Missouri) Basin,
+      NCWCD = Northern Water collection basins,
+      WGRFC = Rio Grande Basin (West Gulf RFC).
+      See also the map interface to SNODAS data
+      hosted by the Open Water Foundation (in process of moving to a State of Colorado server) - use this to learn more about
+      locations of the basins.
+      </p>
+  </div>
+```
 
 ## Resources
 
