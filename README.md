@@ -1,8 +1,8 @@
 # owf-lib-viz-fullpagejs-story
-Open Water Foundation library to visualize a story using fullpage.js JavaScript library
+Open Water Foundation library to visualize a story using [fullpage.js](https://alvarotrigo.com/fullPage/) JavaScript library
 
 ## Design
-The main functionality of this page is built using features provided in fullpage.js Javascript Library. Some of the layout is created using the grid system of bootstrap.js Javascript Library.  
+The main functionality of this page is built using features provided in [fullpage.js](https://alvarotrigo.com/fullPage/) Javascript Library. Some of the layout is created using the grid system of [bootstrap](https://getbootstrap.com/) Javascript Library.  
 Currently, we are limited to only using the basic scrollable features of this library. There are several [extensions](https://alvarotrigo.com/fullPage/extensions/) available, but these require the payment of a fee. For the most part, a scrollable page is sufficient enough to accomplish what we need, and the extensions can be added later, if necessary.
 
 ## Navbar
