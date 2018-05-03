@@ -20,6 +20,16 @@
     <!-- icon -->
     <link id="czr-favicon" rel="icon" href="images/OWF-Logo-Favicon-32x32.png" type="image/png">
 
+    <!-- MapBox Leaflet -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+   crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+   integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+   crossorigin=""></script>
+
   </head>
 
   <body>
@@ -70,11 +80,11 @@
         </div>
       </div>
       <div class="section">
-        <div class="row" style="margin-left:20px; margin-right:0px; margin-bottom: 15px;">
+        <div class="row">
           <div class="col-lg-8">
             <iframe data-src="http://viz.openwaterfoundation.org/co/owf-viz-co-snodas-gapminder/" scrolling="no" frameborder="0"></iframe>
           </div>
-          <div class="col-lg-4" style="padding:100px; padding-left:0px;">
+          <div class="col-lg-4 text-right-custom">
              <h2>Gapminder</h2>
               <p>This visualization has been developed 
               to illustrate how snowpack changes in water supply basins throughout Colorado in a
@@ -112,7 +122,7 @@
         </div>
       </div>
       <div class="section">
-        <div class="row" style="">
+        <div class="row">
           <div class="col-lg-12" style="background-image:url('images/pexels-photo-1034887.jpeg'); height:100vh;">
             <div class="container text-center">
               <p style="color:white; font-size:20px; margin-top:30vh;">
@@ -129,6 +139,18 @@
               <h2>Title Heading 2</h2>
               <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consequat eu odio et dapibus. Nullam tempus lacus quis purus consequat consectetur nec non risus. Cras vulputate, quam nec ultrices tempor, lacus ipsum ultrices turpis, at fringilla augue dui eu nisl. Ut ac augue eget ex imperdiet maximus. Morbi convallis turpis tellus, nec maximus quam gravida eget. Praesent lobortis justo metus, sed pellentesque lorem auctor at. Quisque eu porttitor est, in finibus sem. Phasellus ac lobortis felis. Aenean non scelerisque arcu, sed accumsan leo. Nulla facilisi. Mauris interdum enim sit amet cursus lacinia.</p>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="row">
+          <div class="col-lg-8">
+            <div id="mapbox" class="map-left"></div>
+          </div>
+          <div class="col-lg-4 text-right-custom">
+            <h3>Map Info:</h3>
+            <p>Nam eu nibh felis. Integer luctus ipsum vitae justo aliquam, non ornare quam vestibulum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc sed nisl libero. Proin dignissim felis at magna feugiat imperdiet. Suspendisse fermentum, eros vitae malesuada efficitur, augue nisi convallis leo, ac ultricies risus ligula ut nulla. Sed mollis a nulla a interdum. Quisque nec ullamcorper neque, et auctor nulla. Nulla id posuere tellus. Aliquam ut facilisis lectus. Nunc ullamcorper gravida hendrerit. In non nisi scelerisque sapien condimentum scelerisque. Nullam ultricies sapien vitae eros eleifend, at auctor arcu pharetra.</p>
+            <p>Aenean tincidunt id neque non lobortis. Mauris dictum, justo pulvinar suscipit convallis, nisl dolor maximus est, ut consectetur purus mi non lorem. Integer et quam malesuada, iaculis odio in, egestas purus. Proin eget lectus efficitur, consectetur risus sit amet, suscipit urna. Suspendisse vitae dolor a sapien efficitur consectetur vitae et dui. Maecenas auctor porta urna sed finibus. Aliquam vestibulum urna ac elementum malesuada. Sed id efficitur ex. Sed et augue eget urna condimentum iaculis. Aliquam erat volutpat. Maecenas auctor nisl id risus malesuada eleifend. Nullam libero tortor, aliquam sed rhoncus nec, imperdiet ut nulla. Nunc at ante egestas, eleifend ex ac, iaculis tortor. Vivamus commodo, est consectetur pulvinar volutpat, mauris justo ultricies lacus, ut gravida est nisl vel mauris. Nam varius turpis tortor, eu aliquam velit vestibulum in.</p>
           </div>
         </div>
       </div>
@@ -155,13 +177,24 @@
 
       $(document).ready(function() {
         $('#fullpage').fullpage({
-          anchors:['top','section-one','gapminder', 'colorado-river', 'section-two', 'copyright'],
-          sectionsColor:['#9DB66B','','','','','#5A5A5A'],
+          anchors:['top','section-one','gapminder', 'colorado-river', 'section-two', 'map', 'copyright'],
+          sectionsColor:['#9DB66B','','','','', '','#5A5A5A'],
           navigation:true,
           navigationPosition:'right',
-          navigationTooltips:['OWF Visualizations','Section 1','Gapminder', 'Colorado River', 'Section 2', 'Copyright']
+          navigationTooltips:['OWF Visualizations','Section 1','Gapminder', 'Colorado River', 'Section 2', 'Map', 'Copyright']
         });
       });
+
+      // Leaflet MapBox
+      var mymap = L.map('mapbox').setView([51.5074, 0.1278], 13);
+
+      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoianVyZW50aWUiLCJhIjoiY2pncjQydTYzMDFpajJwdDk2Zm5pdzR6eiJ9.Z1ghl5IV0NbZuVuUcFE1Mg', {
+          attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+          maxZoom: 18,
+          id: 'mapbox.streets',
+          accessToken: 'your.mapbox.access.token'
+      }).addTo(mymap);
+
     </script>
 
 </html>
