@@ -37,23 +37,26 @@
     <!--Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#top">OWF Visualizations</a>
+        <a class="navbar-brand js-scroll-trigger" href="#top">OWF Stories</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#section-one">Section 1</a>
+              <a class="nav-link" href="#text-pages">FullPage.js</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#gapminder">Gapminder</a>
+              <a class="nav-link" href="#text-pages">Text</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#colorado-river">Colorado River</a>
+              <a class="nav-link" href="#viz1">Visualizations</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#section-two">Section 2</a>
+              <a class="nav-link" href="#images">Images</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#map">Leaflet Map</a>
             </li>
           </ul>
         </div>
@@ -64,8 +67,10 @@
       <div class="section">
         <header class="text-white">
           <div class="container text-center">
-              <h1>Open Water Foundation Visualizations</h1>
+              <h1>Open Water Foundation Stories</h1>
               <p class="lead">A scrollable story layout for various OWF visualizations</p>
+              <p class="lead">*This page is designed to be a basic example of a possible story layout configuration, while walking through some of the elements
+              on this page to explain how it can be utilized by others.</p> 
           </div>
         </header>
       </div>
@@ -73,51 +78,82 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12 mx-auto">
-              <h2>Title Heading 1</h2>
-              <p class="lead">Fusce in nisi auctor velit laoreet hendrerit. Integer libero odio, mattis eget eros et, eleifend pharetra tellus. Nullam ultricies facilisis eros, at molestie felis. Nulla quam ligula, sollicitudin eu leo a, tristique dignissim orci. Curabitur pharetra aliquam vulputate. Fusce mauris ligula, facilisis at nisi sit amet, porta scelerisque justo. Morbi urna risus, pharetra sit amet est ut, ornare vulputate velit. Nunc vitae dui sed leo efficitur ornare. Proin malesuada blandit tincidunt. Cras lacinia molestie nunc sed posuere. Integer vitae lorem nulla. Sed suscipit interdum ipsum, id semper ligula dapibus vel.</p>
+              <h2>FullPage.js</h2>
+              <p class="lead">The scrolling features of this page are created using the <a href="https://alvarotrigo.com/fullPage/" target="_blank">FullPage.js</a> JavaScript library.</p>
+              <p class="lead">Currently, this is limited to only using the basic scrollable features of this library. There are several <a href="https://alvarotrigo.com/fullPage/extensions/" target="_blank">extensions</a> available, that provide features such as horizontal scrolling and parallax effect. However, the extensions for the fullpage.js library require purchase. For the most part, a scrollable page is sufficient enough to accomplish what is needed, and the extensions can be added later, if necessary.</p>
+              <p class="lead">The current configurations of this page can be seen below. To learn more about these configurations view the <a href="https://github.com/alvarotrigo/fullPage.js/#options" target="_blank">documentation</a></p>
+              <pre><code>
+                $(document).ready(function() {
+                  $('#fullpage').fullpage({
+                    anchors:['top','fullpage','text-pages','viz1', 'images', 'map', 'copyright'],
+                    sectionsColor:['#9DB66B','','','','','','#5A5A5A'],
+                    navigation:true,
+                    navigationPosition:'right',
+                    navigationTooltips:['OWF Stories','FullPage.js','Text Pages','Adding a Visualization', 'Background Images', 'Leaflet Map', 'Copyright'],
+                    recordHistory:false,
+                    menu:"#navbarResponsive"
+                  });
+                });
+              </code></pre>
             </div>
           </div>
         </div>
       </div>
       <div class="section">
-        <div class="row">
-          <div class="col-lg-8">
-            <iframe data-src="http://viz.openwaterfoundation.org/co/owf-viz-co-snodas-gapminder/" scrolling="no" frameborder="0"></iframe>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 mx-auto">
+              <h2>Text Pages</h2>
+              <p class="lead">This page is an example of adding only text to a section. Text pages can be utilized to explain elements in the story layout and to set up
+              context for the proceeding sections.</p>
+              <p class="lead">This page also makes use of the <a href="https://getbootstrap.com/docs/4.0/layout/grid/" target="_blank">bootstrap grid</a> system. Since
+              the only thing added to this page is text, it is contained in a div with class='col-lg-12' which tells bootstrap to fill the entire width 
+              with the contents of this div. You will notice this content doesn't actually fill the entire width of the page. This is because the whole section is
+              nested within a div class='container' which contains all the elements on this page inside a predefined width.</p>
+            </div>
           </div>
-          <div class="col-lg-4 text-right-custom">
-             <h2>Gapminder</h2>
-              <p>This visualization has been developed 
-              to illustrate how snowpack changes in water supply basins throughout Colorado in a
-              <a href="https://water.usgs.gov/nwc/explain_data.html">water year</a>.
-              The goal is to quickly gain an understanding of both the absolute and relative magnitude of water supply throughout Colorado.
-              The visualization illustrates how conditions in local and major basins vary in time and compare to each other.
-              The basins correspond to those used by the National Weather Service (NWS) River Forecast Centers (RFCs) and Northern Water.
-              <a href="https://www.weather.gov/abrfc/">ABRFC</a> = Arkansas Basin,
-              <a href="https://www.cbrfc.noaa.gov/">CBRFC</a>= Colorado Basin,
-              <a href="https://www.weather.gov/mbrfc/">MBRFC</a> = South Platte (Missouri) Basin,
-              <a href="http://www.northernwater.org">NCWCD</a> = Northern Water collection basins,
-              <a href="https://www.weather.gov/wgrfc/">WGRFC</a> = Rio Grande Basin (West Gulf RFC).
-              See also the <a href="http://projects.openwaterfoundation.org/owf-proj-co-cwcb-2016-snodas/prototype/">map interface to SNODAS data</a>
-              hosted by the <a href="http://openwaterfoundation.org">Open Water Foundation</a> (in process of moving to a State of Colorado server) - use this to learn more about
-              locations of the basins.
-              </p>
-              <p>
-              <a href="https://www.nohrsc.noaa.gov/interactive/html/map.html">SNODAS</a>
-              snow data are estimated using remote sensing, calibrated with on the ground measurements including
-              <a href="https://wcc.sc.egov.usda.gov/reports/UpdateReport.html?report=Colorado&format=SNOTEL+Snowpack+Update+Report">SNOTEL</a>.
-              Unlike SNOTEL sites, which can only measure snow at specific locations,
-              SNODAS provides estimates of <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/or/snow/?cid=nrcs142p2_046155">Snow Water Equivalent (SWE)</a> and
-              snow cover throughout the United States.
-              <b>It is important to recognize that SNODAS data are not consistent across time because the algorithms used to estimate computed values 
-              have changed over time, and SNODAS data are only available since water year 2004.
-              However, these facts are ignored in this visualization in order to leverage SNODAS and
-              illustrate the utility of the dataset.</b>
-              </p>
-              <p>
-              The visualization is configured to plot snowpack data for each local basin as 'bubble' markers on the chart.
-              Daily SWE values are displayed during the period of a single water year.
-              This visualization displays 3 separate variables across time, explained below.
-              The markers move across the chart to show 2 variables (x and y), while also varying in size, representing a third variable.</p>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12 mx-auto">
+              <p class="lead">----------------------------------------------------------
+              This is an example of nesting elements inside a div with class='container-fluid' which will fill the elements spanning the whole width of the page. 
+            ----------------------------------------------------</p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 mx-auto">
+              <p class="lead">Here is an example of setting one div inside the container to the class='col-lg-6' which tells bootstrap to make this div half the width of
+              the container that it is nested inside.</p>
+            </div>
+            <div class="col-lg-6 mx-auto">
+              <p class="lead">This makes it easy to set two elements side by side on the page, which you will see utilized throughout the rest of this site when adding visualizations.</p>
+            </div>
+            <div class="col-lg-12 mx-auto">
+              <p>In general there are two text styling options. This text is nested within paragraph tags with no extra styling added to it.</p>
+              <p class="lead">This text, similar to the text above, has added style to it using class='lead'. </br>
+              If you'd like you can always add new elements to the css stylesheet for more text styling options.</p>
+              </br></br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-8">
+              <iframe data-src="http://viz.openwaterfoundation.org/co/owf-viz-co-snodas-gapminder/" scrolling="no" frameborder="0"></iframe>
+            </div>
+            <div class="col-lg-4 text-right-custom">
+             <h2>Adding a Visualization</h2>
+              <p>This page gives an example of including a visualization with the use of <a href="https://www.w3schools.com/tags/tag_iframe.asp" target="_blank">iframe</a>. 
+              <p>All of the contents on this page are nested within div class='container-fluid' to fill the whole width of the page. There are two divs.</p>
+              <p> One div class='col-lg-8' contains a single iframe which links to the gapminder visualization. This iframe has frameborder='0' set to remove the border around it. Having no border creates a more visually appealing layout, however there are benefits to seeing where the iframe starts and ends. Due to the nature of iframes and fullpage.js, if you wish
+              to scroll to another page, up or down, the mouse must be outside of the iframe or it will not register with fullpage.</p>
+              <p> The other div contains the text on this page and has class='col-lg-4' to fill the remaining grid. This div also has class='text-right-custom' which is a custom style in the stylesheet which removes padding on the left side of the div so the text fits nicely next to the visualization. If you wish you can move the text div before the div containing the visualization iframe and specify class='text-left-custom', for the opposite effect.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -126,38 +162,31 @@
           <div class="col-lg-12" style="background-image:url('images/pexels-photo-1034887.jpeg'); height:100vh;">
             <div class="container text-center">
               <p style="color:white; font-size:20px; margin-top:30vh;">
-                Nulla non augue non tellus eleifend dignissim id vel libero. Sed consequat dignissim efficitur. Donec elit sapien, suscipit eget nibh id, sodales faucibus ipsum. Integer volutpat, urna convallis elementum aliquam, nibh dui feugiat orci, at lobortis ipsum nibh blandit tellus. Nunc non lacinia lorem, euismod malesuada dolor. Nam aliquam varius sem at maximus. In vehicula dictum fringilla. Donec ac posuere eros. Ut sed tortor sit amet ex congue ultricies a vel nunc. Aliquam nisi orci, imperdiet in commodo ut, rutrum in magna. Nullam ut hendrerit lorem. Integer a rhoncus nulla.
+                Here is an example of adding a background image to the page. For the most part, using a custom image may require different placement of the text, different text color, and even different text size. For this reason it will probably require custom style being added to pages with a background image. This text is being centered utilizing bootstrap class='text-center'.
               </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2>Title Heading 2</h2>
-              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consequat eu odio et dapibus. Nullam tempus lacus quis purus consequat consectetur nec non risus. Cras vulputate, quam nec ultrices tempor, lacus ipsum ultrices turpis, at fringilla augue dui eu nisl. Ut ac augue eget ex imperdiet maximus. Morbi convallis turpis tellus, nec maximus quam gravida eget. Praesent lobortis justo metus, sed pellentesque lorem auctor at. Quisque eu porttitor est, in finibus sem. Phasellus ac lobortis felis. Aenean non scelerisque arcu, sed accumsan leo. Nulla facilisi. Mauris interdum enim sit amet cursus lacinia.</p>
+              <p style="color:white; font-size:20px;">
+                The background image is added to the nesting div class='col-lg-12' with added</br> style="background-image:url('local/path/to-file')" to apply background image. This div also has style='height:100vh' so the image fits the entire height of the page.
             </div>
           </div>
         </div>
       </div>
       <div class="section">
         <div class="row">
+          <div class="col-lg-4 text-left-custom">
+            <h3>Leaflet Map</h3>
+            <p>Here is an example of adding a leaflet map to the page. This page is essentially the same as the gapminder visualization above with the text moved to the left of the visualization this time. Instead of adding an iframe, there is a div with id='mapbox' for creating the map with javascript using <a href="https://leafletjs.com/" target="_blank">leaflet</a>.</p>
+          </div>
           <div class="col-lg-8">
             <div id="mapbox" class="map-left"></div>
           </div>
-          <div class="col-lg-4 text-right-custom">
-            <h3>Map Info:</h3>
-            <p>Nam eu nibh felis. Integer luctus ipsum vitae justo aliquam, non ornare quam vestibulum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc sed nisl libero. Proin dignissim felis at magna feugiat imperdiet. Suspendisse fermentum, eros vitae malesuada efficitur, augue nisi convallis leo, ac ultricies risus ligula ut nulla. Sed mollis a nulla a interdum. Quisque nec ullamcorper neque, et auctor nulla. Nulla id posuere tellus. Aliquam ut facilisis lectus. Nunc ullamcorper gravida hendrerit. In non nisi scelerisque sapien condimentum scelerisque. Nullam ultricies sapien vitae eros eleifend, at auctor arcu pharetra.</p>
-            <p>Aenean tincidunt id neque non lobortis. Mauris dictum, justo pulvinar suscipit convallis, nisl dolor maximus est, ut consectetur purus mi non lorem. Integer et quam malesuada, iaculis odio in, egestas purus. Proin eget lectus efficitur, consectetur risus sit amet, suscipit urna. Suspendisse vitae dolor a sapien efficitur consectetur vitae et dui. Maecenas auctor porta urna sed finibus. Aliquam vestibulum urna ac elementum malesuada. Sed id efficitur ex. Sed et augue eget urna condimentum iaculis. Aliquam erat volutpat. Maecenas auctor nisl id risus malesuada eleifend. Nullam libero tortor, aliquam sed rhoncus nec, imperdiet ut nulla. Nunc at ante egestas, eleifend ex ac, iaculis tortor. Vivamus commodo, est consectetur pulvinar volutpat, mauris justo ultricies lacus, ut gravida est nisl vel mauris. Nam varius turpis tortor, eu aliquam velit vestibulum in.</p>
-          </div>
         </div>
       </div>
-      <div class="section">
+      <div class="section fp-auto-height">
           <div class="row">
             <div class="container text-center">
+              </br></br>
               <p class="lead" style="color:white;">Copyright © Open Water Foundation 2018</p>
+              </br></br>
             </div>
           </div>
       </div>
@@ -177,11 +206,13 @@
 
       $(document).ready(function() {
         $('#fullpage').fullpage({
-          anchors:['top','section-one','gapminder', 'colorado-river', 'section-two', 'map', 'copyright'],
-          sectionsColor:['#9DB66B','','','','', '','#5A5A5A'],
+          anchors:['top','fullpage','text-pages','viz1', 'images', 'map', 'copyright'],
+          sectionsColor:['#9DB66B','','','','','','#5A5A5A'],
           navigation:true,
           navigationPosition:'right',
-          navigationTooltips:['OWF Visualizations','Section 1','Gapminder', 'Colorado River', 'Section 2', 'Map', 'Copyright']
+          navigationTooltips:['OWF Stories','FullPage.js','Text Pages','Adding a Visualization', 'Background Images', 'Leaflet Map', 'Copyright'],
+          recordHistory:false,
+          menu:"#navbarResponsive"
         });
       });
 
