@@ -2,13 +2,14 @@
 Open Water Foundation library to visualize a story using [fullpage.js](https://alvarotrigo.com/fullPage/) JavaScript library
 
 ## Design
-The main functionality of this page is built using features provided in [fullpage.js](https://alvarotrigo.com/fullPage/) Javascript Library. Some of the layout is created using the grid system of [bootstrap](https://getbootstrap.com/) Javascript Library.  
-Currently, we are limited to only using the basic scrollable features of this library. There are several [extensions](https://alvarotrigo.com/fullPage/extensions/) available, but these require the payment of a fee. For the most part, a scrollable page is sufficient enough to accomplish what we need, and the extensions can be added later, if necessary.
+The main functionality of this page is built using features provided by the [fullpage.js](https://alvarotrigo.com/fullPage/) Javascript Library. Some of the layout is managed using the grid system provided by the [bootstrap](https://getbootstrap.com/) Javascript Library.  
+
+Currently, we are limited to only using the basic scrollable features of this library. There are several [extensions](https://alvarotrigo.com/fullPage/extensions/) available, that provide features such as horizontal scrolling and parallax effect. However, the extensions for the fullpage.js library require purchase. For the most part, a scrollable page is sufficient enough to accomplish what is needed, and the extensions can be added later, if necessary.
 
 ## Navbar
 
 At the top of `index.html` there is code for the navigation bar. This nav-bar is created using [bootstrap.js](https://getbootstrap.com/docs/4.0/components/navbar/#nav).  
-The links used in the nav-bar must correspond to the configuration of the `anchors` variable for the full page object, found in the script tags at the bottom of `index.html`.
+To make use of the visual scrolling features provided by fullpage.js, the links specified in the nav-bar must correspond to the anchor names configured by the `anchors` variable for the full page object. This can be found in the script tags at the bottom of `index.html`.
 
 Example:
 ```JavaScript
