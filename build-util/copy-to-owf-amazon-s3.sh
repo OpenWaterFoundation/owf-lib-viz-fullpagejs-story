@@ -7,7 +7,7 @@
 # Set --dryrun to test before actually doing
 dryrun=""
 #dryrun="--dryrun"
-s3Folder="s3://viz.openwaterfoundation.org/co/owf-viz-co-snodas-gapminder"
+s3Folder="s3://viz.openwaterfoundation.org/co/owf-lib-viz-fullpagejs-story"
 
 # Make sure that this is being run from the build-util folder
 pwd=`pwd`
