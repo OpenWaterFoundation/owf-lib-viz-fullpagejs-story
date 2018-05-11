@@ -1,6 +1,17 @@
 # owf-lib-viz-fullpagejs-story
 Open Water Foundation library to visualize a story using [fullpage.js](https://alvarotrigo.com/fullPage/) JavaScript library.
 
+## Repository Contents:
+```
+├── owf-viz-co-eagle-river-health-sunburst
+│   ├── build-util/.............(Folder contains scripts to view website locally and deploy to web.)
+│   ├── site-basic-example/.....(A basic FullPage example - can stand alone as website.)
+│   |   ├── css/................(CSS files for website.)
+│   |   ├── images/.............(Images used in the webiste.)
+│   |   ├── js/.................(Javascript files for the website.)
+│   |   ├── index.html..........(Landing page for visualization.)
+```
+
 ## Design
 The main functionality of this page is built using features provided by the [fullpage.js](https://alvarotrigo.com/fullPage/) Javascript Library. Some of the layout is managed using the grid system provided by the [bootstrap](https://getbootstrap.com/) Javascript Library.  
 
