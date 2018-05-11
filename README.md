@@ -63,14 +63,14 @@ $(document).ready(function(){
   #('#fullpage').fullpage();
 })
 ```
-There are many different ways to configure the page. An example can be seen in the [site-folder]().  
+There are many different ways to configure the page. An example can be seen in the [site-folder](https://github.com/OpenWaterFoundation/owf-lib-viz-fullpagejs-story/tree/master/site-basic-example#fullpagejs-configuration).  
 See more configuration options at [fullpage options](https://github.com/alvarotrigo/fullPage.js#options)
 
 ## Bootstrap
 For convenience and simplicity, the example sites implement the use of the [bootsrap](https://getbootstrap.com/) JavaScript library to organize the contents in each section.  
 In general, these examples utilize the [grid system](https://getbootstrap.com/docs/4.0/layout/grid/) that bootstrap provides to help automatically size width of divs.
 Other bootstrap classes are used for [centering text](https://getbootstrap.com/docs/4.0/utilities/text/).  
-To see an example of how bootstrap can be used to configure different sections on a page see [site-basic-example]().
+To see an example of how bootstrap can be used to configure different sections on a page see [site-basic-example](https://github.com/OpenWaterFoundation/owf-lib-viz-fullpagejs-story/tree/master/site-basic-example#bootstrap-example).
 
 ## Resources
 
