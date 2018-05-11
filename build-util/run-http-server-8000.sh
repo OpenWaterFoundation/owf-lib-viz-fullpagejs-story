@@ -69,7 +69,7 @@ runWebServer () {
 # Main entry point into script
 
 # Change to the website files
-cd ../site
+cd ../site-basic-example
 # Run the web server
 runWebServer
 exit 0
