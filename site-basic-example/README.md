@@ -2,6 +2,23 @@
 This folder contains the files necessary to deploy a static site. This site demonstrates several examples of different ways to
 implement pages using the [FullPage.js](https://alvarotrigo.com/fullPage/) Javascript Library.
 
+# Folder Structure
+```
+├── site-basic-example
+│   ├── css/
+│   |   ├── bootstrap.css..........................(bootstrap stylesheet)
+│   |   ├── jquery.fullpage.min.css................(fullpage stylesheet)
+│   |   ├── style.css..............................(custom stylesheet)
+│   ├── images/
+│   |   ├── OWF-Logo-Favicon-32x32.png.............(Open Water Foundation Logo Icon)
+│   |   ├── pexels-photo-1034887.jpeg..............(Stock photo of the Colorado River)
+│   ├── js/
+│   |   ├── bootstrap.js...........................(bootstrap javascript file)
+│   |   ├── jquery.fullpage.min.js.................(fullpage javascript file)
+│   |   ├── jquery.js..............................(JQuery javascript file)
+│   ├── index.html.................................(Landing page for the website.)
+```
+
 ## Sections on this Page
 The different sections on this page display the following examples:
 * Title page
