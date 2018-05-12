@@ -7,7 +7,7 @@
 # Set --dryrun to test before actually doing
 dryrun=""
 #dryrun="--dryrun"
-s3Folder="s3://viz.openwaterfoundation.org/co/owf-lib-viz-fullpagejs-story"
+s3Folder="s3://viz.openwaterfoundation.org/co/owf-lib-viz-fullpagejs-story/site-basic-example"
 
 # Make sure that this is being run from the build-util folder
 pwd=`pwd`
@@ -30,4 +30,4 @@ fi
 
 awsProfile="$1"
 
-aws s3 sync ../site ${s3Folder} ${dryrun} --delete --profile "$awsProfile"
+aws s3 sync ../site-basic-example ${s3Folder} ${dryrun} --delete --profile "$awsProfile"

@@ -39,7 +39,7 @@
     <!--Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#top">OWF Stories</a>
+        <a class="navbar-brand js-scroll-trigger" href="#top">Story Title Here</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -69,10 +69,9 @@
       <div class="section">
         <header class="text-white">
           <div class="container text-center">
-              <h1>Open Water Foundation Stories</h1>
-              <p class="lead">A scrollable story layout for various OWF visualizations</p>
-              <p class="lead">*This page is designed to be a basic example of a possible story layout configuration, while walking through some of the elements
-              on this page to explain how it can be utilized by others.</p> 
+              <h1>Open Water Foundation Example Story</h1>
+              <p class="lead">A scrollable story layout that supports various media pages.</p>
+              <p class="lead">This story illustrates web page elements that are commonly used including text, embedded visualization, image, and map.</p> 
           </div>
         </header>
       </div>
@@ -82,8 +81,12 @@
             <div class="col-lg-12 mx-auto">
               <h2>FullPage.js</h2>
               <p class="lead">The scrolling features of this page are created using the <a href="https://alvarotrigo.com/fullPage/" target="_blank">FullPage.js</a> JavaScript library.</p>
-              <p class="lead">Currently, this is limited to only using the basic scrollable features of this library. There are several <a href="https://alvarotrigo.com/fullPage/extensions/" target="_blank">extensions</a> available, that provide features such as horizontal scrolling and parallax effect. However, the extensions for the fullpage.js library require purchase. For the most part, a scrollable page is sufficient enough to accomplish what is needed, and the extensions can be added later, if necessary.</p>
-              <p class="lead">The current configurations of this page can be seen below. To learn more about these configurations view the <a href="https://github.com/alvarotrigo/fullPage.js/#options" target="_blank">documentation</a></p>
+              <p class="lead">Basic scrollable features are available in the free version of this library.
+		There are several <a href="https://alvarotrigo.com/fullPage/extensions/" target="_blank">extensions</a> available at a cost that provide features
+		such as horizontal scrolling and parallax effect.
+		However, a basic scrollable page is sufficient in most cases.</p>
+              <p class="lead">The configuration of this page is shown below.
+		To learn more about these configurations view the <a href="https://github.com/alvarotrigo/fullPage.js/#options" target="_blank">documentation</a>.</p>
               <pre><code>
                 $(document).ready(function() {
                   $('#fullpage').fullpage({
@@ -91,7 +94,7 @@
                     sectionsColor:['#9DB66B','','','','','','#5A5A5A'],
                     navigation:true,
                     navigationPosition:'right',
-                    navigationTooltips:['OWF Stories','FullPage.js','Text Pages','Adding a Visualization', 'Background Images', 'Leaflet Map', 'Copyright'],
+                    navigationTooltips:['Story Title Here','FullPage.js','Text Pages','Adding a Visualization', 'Background Images', 'Leaflet Map', 'Copyright'],
                     recordHistory:false,
                     menu:"#navbarResponsive"
                   });
@@ -106,12 +109,13 @@
           <div class="row">
             <div class="col-lg-12 mx-auto">
               <h2>Text Pages</h2>
-              <p class="lead">This page is an example of adding only text to a section. Text pages can be utilized to explain elements in the story layout and to set up
-              context for the proceeding sections.</p>
+              <p class="lead">This page is an example of adding only text to a section.
+		Text pages can be used to provide narrative content and context for the subsequent sections.</p>
               <p class="lead">This page also makes use of the <a href="https://getbootstrap.com/docs/4.0/layout/grid/" target="_blank">bootstrap grid</a> system. Since
-              the only thing added to this page is text, it is contained in a div with class='col-lg-12' which tells bootstrap to fill the entire width 
-              with the contents of this div. You will notice this content doesn't actually fill the entire width of the page. This is because the whole section is
-              nested within a div class='container' which contains all the elements on this page inside a predefined width.</p>
+		the only thing added to this page is text, it is contained in a <code>div</code> with <code>class='col-lg-12'</code>,
+		which tells bootstrap to fill the entire width with the contents of this <code>div</code>.
+		However, note that this content doesn't actually fill the entire width of the page. This is because the whole section is
+              nested within a <code>div</code> <code>class='container'</code>, which contains all the elements on this page inside a predefined width.</p>
             </div>
           </div>
         </div>
@@ -119,24 +123,25 @@
           <div class="row">
             <div class="col-lg-12 mx-auto">
               <p class="lead">----------------------------------------------------------
-              This is an example of nesting elements inside a div with class='container-fluid' which will fill the elements spanning the whole width of the page. 
+		This is an example of nesting elements inside a <code>div</code> with <code>class='container-fluid'</code>,
+		which will fill the elements spanning the whole width of the page. 
             ----------------------------------------------------</p>
             </div>
           </div>
         </div>
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 mx-auto">
-              <p class="lead">Here is an example of setting one div inside the container to the class='col-lg-6' which tells bootstrap to make this div half the width of
+            <div class="col-lg-6 mx-auto" style="background-color:yellow;">
+              <p class="lead">Here is an example of setting one <code>div</code> inside the container to the class='col-lg-6' which tells bootstrap to make this <code>div</code> half the width of
               the container that it is nested inside.</p>
             </div>
-            <div class="col-lg-6 mx-auto">
+            <div class="col-lg-6 mx-auto" style="background-color:#99ff66;">
               <p class="lead">This makes it easy to set two elements side by side on the page, which you will see utilized throughout the rest of this site when adding visualizations.</p>
             </div>
             <div class="col-lg-12 mx-auto">
               <p>In general there are two text styling options. This text is nested within paragraph tags with no extra styling added to it.</p>
-              <p class="lead">This text, similar to the text above, has added style to it using class='lead'. </br>
-              If you'd like you can always add new elements to the css stylesheet for more text styling options.</p>
+              <p class="lead">This text, similar to the text above, has added style to it using <code>class='lead'</code>. </br>
+              New elements can be added to the css stylesheet for more text styling options.</p>
               </br></br>
             </div>
           </div>
@@ -151,10 +156,20 @@
             <div class="col-lg-4 text-right-custom">
              <h2>Adding a Visualization</h2>
               <p>This page gives an example of including a visualization with the use of <a href="https://www.w3schools.com/tags/tag_iframe.asp" target="_blank">iframe</a>. 
-              <p>All of the contents on this page are nested within div class='container-fluid' to fill the whole width of the page. There are two divs.</p>
-              <p> One div class='col-lg-8' contains a single iframe which links to the gapminder visualization. This iframe has frameborder='0' set to remove the border around it. Having no border creates a more visually appealing layout, however there are benefits to seeing where the iframe starts and ends. Due to the nature of iframes and fullpage.js, if you wish
-              to scroll to another page, up or down, the cursor must be outside of the iframe or it will not register with fullpage.</p>
-              <p> The other div contains the text on this page and has class='col-lg-4' to fill the remaining grid. This div also has class='text-right-custom' which is a custom style in the stylesheet which removes padding on the left side of the div so the text fits nicely next to the visualization. If you wish you can move the text div before the div containing the visualization iframe and specify class='text-left-custom', for the opposite effect.</p>
+              <p>All of the contents on this page are nested within <code>div</code> <code>class='container-fluid'</code> to fill the whole width of the page.
+		There are two <code>div</code> elements.</p>
+              <p> One <code>div</code>, <code>class='col-lg-8'</code> contains a single <code>iframe</code>,
+		which embeds the gapminder visualization. This <code>iframe</code> has <code>frameborder='0'</code> set to remove the border around it.
+		Having no border creates a more visually appealing layout,
+		however there are benefits to seeing where the <code>iframe</code> starts and ends.
+		Due to the nature of <code>iframe</code> elements and fullpage.js,
+              to scroll to another page, up or down, the cursor must be outside of the <code>iframe</code>or it will not register with fullpage.</p>
+              <p> The other <code>div</code> contains the text in the "Adding a Visualization" content and has <code>class='col-lg-4'</code>
+		to fill the remaining grid. This <code>div</code> also has <code>class='text-right-custom'</code>
+		which is a custom style in the stylesheet which removes padding on the left side of the <code>div</code>
+		so the text fits nicely next to the visualization.
+		If desired, move the text <code>div</code> before the <code>div</code> containing the visualization
+		<code>iframe</code> and specify <code>class='text-left-custom'</code> to display the text on the left side of the section.</p>
             </div>
           </div>
         </div>
@@ -163,11 +178,16 @@
         <div class="row">
           <div class="col-lg-12" style="background-image:url('images/pexels-photo-1034887.jpeg'); height:100vh;">
             <div class="container text-center">
-              <p style="color:white; font-size:20px; margin-top:30vh;">
-                Here is an example of adding a background image to the page. For the most part, using a custom image may require different placement of the text, different text color, and even different text size. For this reason it will probably require custom style being added to pages with a background image. This text is being centered utilizing bootstrap class='text-center'.
+              <p style="color:#003399; font-size:20px; margin-top:30vh;">
+                This page illustrates an example of adding a background image to the page.
+		Using a custom image may require different placement of the text, different text color, and even different text size.
+		For this reason it will probably require custom style being added to pages with a background image.
+		This text is being centered utilizing bootstrap <code>class='text-center'</code>.
               </p>
-              <p style="color:white; font-size:20px;">
-                The background image is added to the nesting div class='col-lg-12' with added</br> style="background-image:url('local/path/to-file')" to apply background image. This div also has style='height:100vh' so the image fits the entire height of the page.
+              <p style="color:#003399; font-size:20px;">
+                The background image is added to the nesting <code>div</code> <code>class='col-lg-12'</code>
+		with added</br><code>style="background-image:url('local/path/to-file')"</code> to apply background image.
+		This <code>div</code> also has <code>style='height:100vh'</code> so the image fits the entire height of the page.
             </div>
           </div>
         </div>
@@ -176,7 +196,10 @@
         <div class="row">
           <div class="col-lg-4 text-left-custom">
             <h3>Leaflet Map</h3>
-            <p>Here is an example of adding a leaflet map to the page. This page is essentially the same as the gapminder visualization above with the text moved to the left of the visualization this time. Instead of adding an iframe, there is a div with id='mapbox' for creating the map with javascript using <a href="https://leafletjs.com/" target="_blank">leaflet</a>.</p>
+            <p>This section illustrates an example of adding a leaflet map to the page.
+		This page is essentially the same as the gapminder visualization above with the text moved to the left of the visualization this time.
+		Instead of adding an <code>iframe</code>, there is a <code>div</code> with <code>id='mapbox'</code>
+		for creating the map with javascript using <a href="https://leafletjs.com/" target="_blank">leaflet</a>.</p>
           </div>
           <div class="col-lg-8">
             <div id="mapbox" class="map-left"></div>
@@ -210,14 +233,14 @@
           sectionsColor:['#9DB66B','','','','','','#5A5A5A'],
           navigation:true,
           navigationPosition:'right',
-          navigationTooltips:['OWF Stories','FullPage.js','Text Pages','Adding a Visualization', 'Background Images', 'Leaflet Map', 'Copyright'],
+          navigationTooltips:['Story Title Here','FullPage.js','Text Pages','Adding a Visualization', 'Background Images', 'Leaflet Map', 'Copyright'],
           recordHistory:false,
           menu:"#navbarResponsive"
         });
       });
 
       // Leaflet MapBox
-      var mymap = L.map('mapbox').setView([51.5074, 0.1278], 13);
+      var mymap = L.map('mapbox').setView([40.5853, -105.0844], 13);
 
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoianVyZW50aWUiLCJhIjoiY2pncjQydTYzMDFpajJwdDk2Zm5pdzR6eiJ9.Z1ghl5IV0NbZuVuUcFE1Mg', {
           attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
