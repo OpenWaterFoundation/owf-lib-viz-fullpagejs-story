@@ -60,6 +60,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#map">Leaflet Map</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#videos">YouTube</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -183,6 +186,21 @@
           </div>
         </div>
       </div>
+      <div class="section">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-8">
+              <iframe data-src="https://www.youtube.com/embed/h6bgRP07C6U" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="col-lg-4 text-right-custom">
+             <h2>Embed a Video</h2>
+              <p>This page gives an example of embedding a video from youtube with the use of <a href="https://www.w3schools.com/html/html_youtube.asp" target="_blank">iframe</a>. 
+              <p>This page is a replica of the <a href="#viz1">visualizations page</a> up above. Refer to the visualizations page to understand how the contents of this page are initialized and defined.</p>
+              <p>The only really change made to this page is small edits to the iframe element</p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="section fp-auto-height">
           <div class="row">
             <div class="container text-center">
@@ -206,11 +224,11 @@
 
       $(document).ready(function() {
         $('#fullpage').fullpage({
-          anchors:['top','fullpage','text-pages','viz1', 'images', 'map', 'copyright'],
-          sectionsColor:['#9DB66B','','','','','','#5A5A5A'],
+          anchors:['top','fullpage','text-pages','viz1', 'images', 'map', 'videos', 'copyright'],
+          sectionsColor:['#9DB66B','','','','','','','#5A5A5A'],
           navigation:true,
           navigationPosition:'right',
-          navigationTooltips:['OWF Stories','FullPage.js','Text Pages','Adding a Visualization', 'Background Images', 'Leaflet Map', 'Copyright'],
+          navigationTooltips:['OWF Stories','FullPage.js','Text Pages','Adding a Visualization', 'Background Images', 'Leaflet Map', 'YouTube', 'Copyright'],
           recordHistory:false,
           menu:"#navbarResponsive"
         });
