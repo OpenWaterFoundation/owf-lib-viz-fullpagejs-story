@@ -66,6 +66,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="#videos">YouTube</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#arcgis">ArcGIS Map</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -232,7 +235,7 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-lg-8">
-               <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="IPPs by Location Flag" src="//www.arcgis.com/apps/Embed/index.html?webmap=f84ac917a58c427eb67a1f19b0c0d81f&extent=-106.464,39.0498,-102.4072,40.8125&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"></iframe>
+              <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="South Platte/Metro Decreed Instream Flow Reaches" src="//www.arcgis.com/apps/Embed/index.html?webmap=cdce4628c8f1416a9f7bd739988a7427&extent=-109.4871,37.6419,-99.0061,41.1925&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"></iframe>
               </div>
               <div class="col-lg-4 text-right-custom">
                <h2>Embed a Video</h2>
@@ -241,10 +244,10 @@
                 <p>The only real changes made to this page include a small edit to the <code>iframe</code> element.</p>
                 <p>To get the iframe code information from ArcGIS first navigate to the map you would like to embed in the story. Click on the "Share" button, then check under "Choose who can view this map" check the button "Everyone (public)". Once you select this you can then click the button "EMBED IN WEBSITE". Here you can edit many different attributes for the map and you can copy the code from under "Copy and paste HTML to embed in website". The only code necessary is the <code>iframe</code> information which can be extracted from the following copied code.</p>
                 <p>Once copying the code you will see something similar to:</br>
-                  <code>&ltstyle&gt.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}&lt/style>&ltdiv class="embed-container"&gt&ltiframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="IPPs by Location Flag" src="//www.arcgis.com/apps/Embed/index.html?webmap=f84ac917a58c427eb67a1f19b0c0d81f&extent=-106.5573,38.8554,-101.3169,40.623&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"&gt&lt/iframe&gt&lt/div&gt</code></br>
+                  <code>&ltstyle&gt.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}&lt/style>&ltdiv class="embed-container"&gt&ltiframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="South Platte/Metro Decreed Instream Flow Reaches" src="//www.arcgis.com/apps/Embed/index.html?webmap=cdce4628c8f1416a9f7bd739988a7427&extent=-109.4871,37.6419,-99.0061,41.1925&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"&gt&lt/iframe&gt&lt/div&gt</code></br>
                   Anything in the style tags can be removed as well as the parent div for the iframe. Remove the width and height from the iframe, and the styling from <code>style.css</code> should handle any of the necessary styling features.</br>
                   The resulting code will look like:</br>
-                  <code>&ltiframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="IPPs by Location Flag" src="//www.arcgis.com/apps/Embed/index.html?webmap=f84ac917a58c427eb67a1f19b0c0d81f&extent=-106.5573,38.8554,-101.3169,40.623&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"&gt&lt/iframe&gt</code>
+                  <code>&ltiframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="South Platte/Metro Decreed Instream Flow Reaches" src="//www.arcgis.com/apps/Embed/index.html?webmap=cdce4628c8f1416a9f7bd739988a7427&extent=-109.4871,37.6419,-99.0061,41.1925&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"&gt&lt/iframe&gt</code>
                 </p>
               </div>
             </div>
@@ -279,11 +282,11 @@
 
       $(document).ready(function() {
         $('#fullpage').fullpage({
-          anchors:['top','fullpage','text-pages','viz1', 'images', 'map', 'videos', 'copyright'],
+          anchors:['top','fullpage','text-pages','viz1', 'images', 'map', 'videos', 'arcgis', 'copyright'],
           sectionsColor:['#9DB66B','','','','','','','','#5A5A5A'],
           navigation:true,
           navigationPosition:'right',
-          navigationTooltips:['South Platte and Metro Basin IPPs','SWSI 2004','SWSI 2010 M&I IPPs', 'SWSI 2010 E&R IPPs','M&I IPPs','Ag IPPs','E&R IPPs', 'IPP Update', 'IPPs by Location Flag', 'IPPs by Basin and Yield', 'IPPs by Basin and Cost', 'Example IPP: NISP', 'Example IPP:ACWWA Flow Project', 'Resources', 'Sources'],
+          navigationTooltips:['OWF Stories','FullPage.js','Text Pages','Adding a Visualization', 'Background Images', 'Leaflet Map', 'YouTube', 'ArcGIS Map', 'Copyright'],
           recordHistory:false,
           menu:"#navbarResponsive",
           paddingTop:'75px'
