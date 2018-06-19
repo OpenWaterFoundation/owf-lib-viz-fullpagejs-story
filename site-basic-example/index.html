@@ -69,6 +69,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="#arcgis">ArcGIS Map</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#juxtapose">Juxtapose slider</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -100,10 +103,10 @@
                   $(document).ready(function() {
                     $('#fullpage').fullpage({
                       anchors:['top','fullpage','text-pages','viz1', 'images', 'map', 'copyright'],
-                      sectionsColor:['#9DB66B','','','','','','#5A5A5A'],
+                      sectionsColor:['#9DB66B','','','','','', '', '#5A5A5A'],
                       navigation:true,
                       navigationPosition:'right',
-                      navigationTooltips:['Story Title Here','FullPage.js','Text Pages','Adding a Visualization', 'Background Images', 'Leaflet Map', 'Copyright'],
+                      navigationTooltips:['Story Title Here','FullPage.js','Text Pages','Adding a Visualization', 'Background Images', 'Leaflet Map', 'Juxtapose', 'Copyright'],
                       recordHistory:false,
                       menu:"#navbarResponsive"
                     });
@@ -253,6 +256,25 @@
             </div>
           </div>
         </div>
+        <div class="section">
+          <div class="row" style="margin-left: 15px">
+            <div class="col-lg-8">
+              <div id="juxtapose-wrapper" class="juxtapose">
+                <img src="images/Greeley-2005.jpg" data-label="Greeley 2005" data-credit="Google Earth"/>
+                <img src="images/Greeley-2017.jpg" data-label="Greeley 2017" data-credit="Google Earth"/>
+              </div>
+              <script src="js/juxtapose-1.2.0.js"></script>
+              <link rel="stylesheet" href="css/juxtapose-1.2.0.css">
+            </div>
+            <div class="col-lg-4 text-right-custom">
+              <h3>Juxtapose slider</h3>
+              <p>This section illustrates an example of adding a juxtapose slider.
+      This page is a replica of the <a href="#map">leaflet map page</a>.
+      Instead of adding an <code>iframe</code>, there is a <code>div</code> with <code>class='juxtapose'</code>
+      for creating a slider using <a href="https://juxtapose.knightlab.com/" target="_blank">Juxtapose</a>.</p>
+            </div>
+          </div>
+        </div>
         <div class="section fp-auto-height">
             <div class="row">
               <div class="container text-center">
@@ -282,11 +304,11 @@
 
       $(document).ready(function() {
         $('#fullpage').fullpage({
-          anchors:['top','fullpage','text-pages','viz1', 'images', 'map', 'videos', 'arcgis', 'copyright'],
-          sectionsColor:['#9DB66B','','','','','','','','#5A5A5A'],
+          anchors:['top','fullpage','text-pages','viz1', 'images', 'map', 'videos', 'arcgis', 'juxtapose', 'copyright'],
+          sectionsColor:['#9DB66B','','','','','','','','','#5A5A5A'],
           navigation:true,
           navigationPosition:'right',
-          navigationTooltips:['OWF Stories','FullPage.js','Text Pages','Adding a Visualization', 'Background Images', 'Leaflet Map', 'YouTube', 'ArcGIS Map', 'Copyright'],
+          navigationTooltips:['OWF Stories','FullPage.js','Text Pages','Adding a Visualization', 'Background Images', 'Leaflet Map', 'YouTube', 'ArcGIS Map', 'Juxtapose slider', 'Copyright'],
           recordHistory:false,
           menu:"#navbarResponsive",
           paddingTop:'75px'
