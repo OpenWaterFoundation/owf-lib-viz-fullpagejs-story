@@ -2,6 +2,15 @@
 
 Open Water Foundation library to visualize a story using [fullpage.js](https://alvarotrigo.com/fullPage/) JavaScript library.
 
+See the visualization [deployed on OWF website](http://viz.openwaterfoundation.org/co/owf-lib-viz-fullpagejs-story/site-basic-example).
+
+* [Repository Contents](#repository-contents)
+* [Design](#design)
+* [Navbar](#navbar)
+* [Full Page](#full-page)
+* [Bootstrap](#bootstrap)
+* [Resources](#resources)
+
 ## Repository Contents:
 ```
 ├── owf-viz-fullpagejs-story....Repository folder.
