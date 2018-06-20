@@ -257,15 +257,17 @@
           </div>
         </div>
         <div class="section">
-          <div class="row" style="margin-left: 15px">
+          <!--without "style='margin: 0;'" Juxtapose will stick to the edge of the screen-->
+          <div class="row" style="margin: 0;"> 
             <div class="col-lg-8">
               <div class="juxtapose-container">
-                <div id="juxtapose-wrapper" class="juxtapose">
+                <div class="juxtapose">
                   <img src="images/Greeley-2005.jpg" data-label="Greeley 2005" data-credit="Google Earth"/>
                   <img src="images/Greeley-2017.jpg" data-label="Greeley 2017" data-credit="Google Earth"/>
                 </div>
               </div>
               <script src="js/juxtapose-1.2.0.js"></script>
+              <link rel="stylesheet" href="css/juxtapose-1.2.0.css">
               <!-- This script was found on GitHub, written by username willwong89 to make juxtapose responsive to window size changes -->
               <script>
                 var $juxtapose = $('.juxtapose'), $juxtapose_container = $('.juxtapose-container'), juxtapose_ratio;
@@ -276,14 +278,15 @@
                   $juxtapose.css({width: new_width, height: new_height})
                 });
               </script>
-              <link rel="stylesheet" href="css/juxtapose-1.2.0.css">
             </div>
             <div class="col-lg-4 text-right-custom">
               <h3>Juxtapose slider</h3>
-              <p>This section illustrates an example of adding a juxtapose slider.
-      This page is a replica of the <a href="#map">leaflet map page</a>.
-      Instead of adding an <code>iframe</code>, there is a <code>div</code> with <code>class='juxtapose'</code>
-      for creating a slider using <a href="https://juxtapose.knightlab.com/" target="_blank">Juxtapose</a>.</p>
+              <p>This section illustrates an example of adding a slider to compare two images using <a href="https://juxtapose.knightlab.com/">Juxtapose</a>.</p>
+              <p>This page is very similar to the <a href="#arcgis">ArcGIS Map page</a>.</p>
+              <p>There is no need for an <code>iframe</code> here. Instead, it is required to have a <code>div</code> with <code>class='juxtapose-container'</code> containing another <code>div</code> with <code>class='juxtapose'</code>.</p>
+              <p>Inside those, there should be two <code>image</code> tags in this format: <code>&ltimg src="(image location)" data-label="(image label)" data-credit="(image source)"/&gt</code>. The first image tag will be the image on the left and the second will be the image on the right. On these image tags, the <code>data-label</code> and <code>data-credit</code> are optional. <code>data-label</code> allows you to add a label for the image, and <code>data-credit</code> allows you to credit/site the source of the image.</p>
+              <p>With this code in place, the linked <code>script</code> and stylesheet do the rest of the work.</p>
+              <p>On its own, Juxtapose is not very resposive to window size changes. It will only change size after refresh and sticks to the edge of the screen. The first issue is solved with the pasted <code>script</code> by overriding the size anytime anything changes. The second issue is solved by putting <code>style='margin: 0;'</code> on the <code>div</code> labeled <code>class='row'</code>.</p>
             </div>
           </div>
         </div>
