@@ -96,7 +96,7 @@ iframe {
 .text-leaflet-overlay {
 	position: absolute;
 	z-index: 401;
-	background-color: rgb(160, 160, 160, 0.3);
+	background-color: rgb(160, 160, 160, 0.4);
 	border-radius:10px;
 	color:#003399;
 	width: 400px;

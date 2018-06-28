@@ -64,6 +64,9 @@
                 <a class="nav-link" href="#map">Leaflet Map</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="#full-map">Full Leaflet Map</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="#videos">YouTube</a>
               </li>
               <li class="nav-item">
@@ -200,7 +203,7 @@
                 <p style="color:#003399; font-size:20px;">
                   The background image is added to the section <code>div class='section'</code>
   		with added</br><code>style="background-image:url('local/path/to-file')"</code> to apply background image.
-  		This <code>div</code> also has <code>style='height:100vh!important'</code> so the image fits the entire height of the page.
+  		This <code>div</code> also has <code>style='height:100vh!important'</code> so the image fits the entire height of the page.</p>
               </div>
             </div>
           </div>
@@ -218,6 +221,18 @@
               <div id="mapbox" class="map-left"></div>
             </div>
           </div>
+        </div>
+        <div class="section">
+          <div class="text-leaflet-overlay">
+            <h3>Full Page Leaflet Map</h3>
+            <p>This section illustrates an example of adding a leaflet map that fills the page.
+      This page is very similar to the <a href="#map">Leaflet Map</a> page, but the map and text have different labels. The map is labeled <code>class="map-full"</code> rather than <code>"map-left"</code> or <code>"map-right"</code>. The text is labeled <code>class="text-leaflet-overlay"</code>.
+          </div>
+          <div class="text-leaflet-overlay-light" style="margin-top: 300px;">
+            <h5>Lighter text background</h5>
+            <p>Depending on the color of your map, the above text may be hard to read. Using <code>class="text-leaflet-overlay-light"</code> instead will give you a textbox with a lighter background</p>
+          </div>
+          <div id="mapbox-full" class="map-full"></div>
         </div>
         <div class="section">
           <div class="container-fluid">
@@ -319,11 +334,11 @@
 
       $(document).ready(function() {
         $('#fullpage').fullpage({
-          anchors:['top','fullpage','text-pages','viz1', 'images', 'map', 'videos', 'arcgis', 'juxtapose', 'copyright'],
-          sectionsColor:['#9DB66B','','','','','','','','','#5A5A5A'],
+          anchors:['top','fullpage','text-pages','viz1', 'images', 'map', 'full-map', 'videos', 'arcgis', 'juxtapose', 'copyright'],
+          sectionsColor:['#9DB66B','','','','','','','','','','#5A5A5A'],
           navigation:true,
           navigationPosition:'right',
-          navigationTooltips:['OWF Stories','FullPage.js','Text Pages','Adding a Visualization', 'Background Images', 'Leaflet Map', 'YouTube', 'ArcGIS Map', 'Juxtapose slider', 'Copyright'],
+          navigationTooltips:['OWF Stories','FullPage.js','Text Pages','Adding a Visualization', 'Background Images', 'Leaflet Map', 'Full Leaflet Map', 'YouTube', 'ArcGIS Map', 'Juxtapose slider', 'Copyright'],
           recordHistory:false,
           menu:"#navbarResponsive",
           paddingTop:'75px'
@@ -332,6 +347,15 @@
 
       // Leaflet MapBox
       var mymap = L.map('mapbox').setView([40.5853, -105.0844], 13);
+
+      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}&' + new Date().getTime(), {
+          attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+          maxZoom: 18,
+          id: 'mapbox.streets',
+          accessToken: 'pk.eyJ1IjoianVyZW50aWUiLCJhIjoiY2pncjQydTYzMDFpajJwdDk2Zm5pdzR6eiJ9.Z1ghl5IV0NbZuVuUcFE1Mg'
+      }).addTo(mymap);
+
+      var mymap = L.map('mapbox-full').setView([40.5853, -105.0844], 13);
 
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}&' + new Date().getTime(), {
           attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
