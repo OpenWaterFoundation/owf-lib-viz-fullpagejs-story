@@ -10,6 +10,7 @@ See the visualization [deployed on OWF website](http://viz.openwaterfoundation.o
 * [Full Page](#full-page)
 * [Bootstrap](#bootstrap)
 * [Resources](#resources)
+* [Leaflet](#leaflet)
 
 ## Repository Contents:
 ```
@@ -102,7 +103,58 @@ Other bootstrap classes are used for [centering text](https://getbootstrap.com/d
 To see an example of how bootstrap can be used to configure different sections on a
 page see [site-basic-example](https://github.com/OpenWaterFoundation/owf-lib-viz-fullpagejs-story/tree/master/site-basic-example#bootstrap-example).
 
+## Leaflet
+
+These examples utilize the [Leaflet](https://leafletjs.com/) javascript library to add maps to the story. 
+The code necessary to create a single leaflet map can be quite lengthy, which can clutter up the index.html file. 
+
+#### Separate Javascript Files
+One technique to handle this issue is to move the javascript code for each map into their own separate javascript 
+files, and then including them in index.html.
+
+#### Using Closures
+Another issue that can be ran into is confusion among variable names. Often when working with leaflet maps the code 
+to build each separate map can look very similar and the variable names used might end up being the same, which can 
+confuse the javascript namespace. Wrapping your code in a closer can combat this issue.  
+Below is an example of closure syntax:
+```javascript
+(function(){
+  //encapsulated code
+})();
+```
+
+#### Example
+See the following example on how to put it all together:
+```html
+<!-- index.html -->
+<div id='mapbox1' class='map-right'></div>
+<!-- javascript file must come AFTER declaring the map div id -->
+<script src='js/leaflet-map.js'></script>
+```
+```javascript
+//leaflet.map.js
+(function(){
+    // Leaflet MapBox of IPPs by Basin and Cost
+	var map = L.map('mapbox1').setView([40.112, -104.828], 9);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v9/tiles/256/{z}/{x}/{y}?access_token=' +
+				'pk.eyJ1Ijoia3Jpc3RpbnN3YWltIiwiYSI6ImNpc3Rjcnl3bDAzYWMycHBlM2phbDJuMHoifQ.vrDCYwkTZsrA_0FffnzvBw', 
+	{
+		maxZoom: 18,
+		attribution: 'Created by the <a href="http://openwaterfoundation.org">Open Water Foundation. </a>' + 
+		'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+		id: 'mapbox.outdoors'
+	}).addTo(map);
+  
+  //Additional leaflet code
+  
+})();
+```
+
 ## Resources
 
 * [fullPage.js](https://alvarotrigo.com/fullPage/)
 * [bootstrap](https://getbootstrap.com/)
+* [leaflet.js](https://leafletjs.com/)
