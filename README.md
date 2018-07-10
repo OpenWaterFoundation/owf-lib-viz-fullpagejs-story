@@ -158,3 +158,5 @@ See the following example on how to put it all together:
 * [fullPage.js](https://alvarotrigo.com/fullPage/)
 * [bootstrap](https://getbootstrap.com/)
 * [leaflet.js](https://leafletjs.com/)
+* [JuxtaposeJS](https://juxtapose.knightlab.com/)
+* [ArcGIS](https://www.arcgis.com/index.html)
