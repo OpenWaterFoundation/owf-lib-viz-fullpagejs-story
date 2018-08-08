@@ -430,21 +430,55 @@
     // Leaflet MapBox
     var mymap = L.map('mapbox').setView([40.5853, -105.0844], 13);
 
+    var mapBox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}&' + new Date().getTime(), {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox.streets',
+      accessToken: 'pk.eyJ1IjoianVyZW50aWUiLCJhIjoiY2pncjQydTYzMDFpajJwdDk2Zm5pdzR6eiJ9.Z1ghl5IV0NbZuVuUcFE1Mg'
+    }).addTo(mymap);
+
+    var openstreet = L.tileLayer("http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
+    });
+
+    var esri = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+    });
+
+    var cartoDB =  new L.TileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+    });
+
+    var googleStreet = new L.TileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+      subdomains:['mt0','mt1','mt2','mt3'],
+      attribution: '<a href="https://maps.google.com">Map data: Google</a>'
+    });
+
+    var googleSatellite = new L.TileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+      subdomains:['mt0','mt1','mt2','mt3'],
+      attribution: '<a href="https://maps.google.com/earth">Map data: Google Satellite</a>'
+    });
+
+    var baseMaps = {
+        "Mapbox": mapBox,
+        "OpenStreetMap": openstreet,
+        "Esri": esri,
+        "CartoDB": cartoDB,
+        "Google Street": googleStreet,
+        "Google Satellite": googleSatellite
+    }
+
+    L.control.layers(baseMaps).addTo(mymap);
+
+    // Full page leaflet map
+    var mymapfull = L.map('mapbox-full').setView([40.5853, -105.0844], 13);
+
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}&' + new Date().getTime(), {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 18,
         id: 'mapbox.streets',
         accessToken: 'pk.eyJ1IjoianVyZW50aWUiLCJhIjoiY2pncjQydTYzMDFpajJwdDk2Zm5pdzR6eiJ9.Z1ghl5IV0NbZuVuUcFE1Mg'
-    }).addTo(mymap);
-
-    var mymap = L.map('mapbox-full').setView([40.5853, -105.0844], 13);
-
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}&' + new Date().getTime(), {
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox.streets',
-        accessToken: 'pk.eyJ1IjoianVyZW50aWUiLCJhIjoiY2pncjQydTYzMDFpajJwdDk2Zm5pdzR6eiJ9.Z1ghl5IV0NbZuVuUcFE1Mg'
-    }).addTo(mymap);
+    }).addTo(mymapfull);
 
   </script>
 
