@@ -188,3 +188,5 @@ any of the other files on the site.
 * [leaflet.js](https://leafletjs.com/)
 * [JuxtaposeJS](https://juxtapose.knightlab.com/)
 * [ArcGIS](https://www.arcgis.com/index.html)
+* [Knight Lab](https://knightlab.northwestern.edu/)
+* [StoryMapJS](https://storymap.knightlab.com/)
