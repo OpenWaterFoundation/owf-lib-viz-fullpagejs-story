@@ -105,16 +105,16 @@ page see [site-basic-example](https://github.com/OpenWaterFoundation/owf-lib-viz
 
 ## Leaflet
 
-These examples utilize the [Leaflet](https://leafletjs.com/) javascript library to add maps to the story. 
-The code necessary to create a single leaflet map can be quite lengthy, which can clutter up the index.html file. 
+These examples utilize the [Leaflet](https://leafletjs.com/) javascript library to add maps to the story.
+The code necessary to create a single leaflet map can be quite lengthy, which can clutter up the index.html file.
 
 #### Separate Javascript Files
-One technique to handle this issue is to move the javascript code for each map into their own separate javascript 
+One technique to handle this issue is to move the javascript code for each map into their own separate javascript
 files, and then including them in index.html.
 
 #### Using Closures
-Another issue that can be ran into is confusion among variable names. Often when working with leaflet maps the code 
-to build each separate map can look very similar and the variable names used might end up being the same, which can 
+Another issue that can be ran into is confusion among variable names. Often when working with leaflet maps the code
+to build each separate map can look very similar and the variable names used might end up being the same, which can
 confuse the javascript namespace. Wrapping your code in a closer can combat this issue.  
 Below is an example of closure syntax:
 ```javascript
@@ -138,20 +138,48 @@ See the following example on how to put it all together:
 	var map = L.map('mapbox1').setView([40.112, -104.828], 9);
 
 	L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v9/tiles/256/{z}/{x}/{y}?access_token=' +
-				'pk.eyJ1Ijoia3Jpc3RpbnN3YWltIiwiYSI6ImNpc3Rjcnl3bDAzYWMycHBlM2phbDJuMHoifQ.vrDCYwkTZsrA_0FffnzvBw', 
+				'pk.eyJ1Ijoia3Jpc3RpbnN3YWltIiwiYSI6ImNpc3Rjcnl3bDAzYWMycHBlM2phbDJuMHoifQ.vrDCYwkTZsrA_0FffnzvBw',
 	{
 		maxZoom: 18,
-		attribution: 'Created by the <a href="http://openwaterfoundation.org">Open Water Foundation. </a>' + 
+		attribution: 'Created by the <a href="http://openwaterfoundation.org">Open Water Foundation. </a>' +
 		'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
 			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
 			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 		id: 'mapbox.outdoors'
 	}).addTo(map);
-  
+
   //Additional leaflet code
-  
+
 })();
 ```
+
+## Knightlab - StoryMap ##
+[StoryMapJS](https://storymap.knightlab.com/) is a web visualization offered from [Knight Lab](https://knightlab.northwestern.edu/) and is a convenient way of creating and telling
+stories, while also incorporating spatial data.
+
+> StoryMapJS is a free tool to help you tell stories on the web that highlight the locations of a series of events.
+
+StoryMapJS implements features using Leaflet.js, and it has become apparent that this can lead
+to issues when using StoryMap with other Leaflet maps on a single page. Information can get
+overwritten between different javascript and style files.
+
+A solution to this issue is to build the StoryMap in a separate `html` file and embed that page
+in the overall fullpage story.
+
+For example, a StoryMap is created in the following file, [`storymap.html`](https://github.com/OpenWaterFoundation/owf-lib-viz-fullpagejs-story/blob/master/site-basic-example/storymap/storymap.html). `storymap.html` is then embedded in `index.html`:
+
+```Html
+<!-- PAGE 11 -->
+<!-- StoryMap -->
+<div class="section">
+  <div class="row">
+    <iframe style="width:95%" frameborder="0" src="storymap/storymap.html"></iframe>
+  </div>
+</div>
+```
+
+The example above ensures that the storymap javascript and style files are not confused with
+any of the other files on the site.
 
 ## Resources
 
