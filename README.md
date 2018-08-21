@@ -183,9 +183,9 @@ any of the other files on the site.
 
 ## Resources
 
-* [fullPage.js](https://alvarotrigo.com/fullPage/)
-* [bootstrap](https://getbootstrap.com/)
-* [leaflet.js](https://leafletjs.com/)
+* [FullPage](https://alvarotrigo.com/fullPage/)
+* [Bootstrap](https://getbootstrap.com/)
+* [Leaflet](https://leafletjs.com/)
 * [JuxtaposeJS](https://juxtapose.knightlab.com/)
 * [ArcGIS](https://www.arcgis.com/index.html)
 * [Knight Lab](https://knightlab.northwestern.edu/)
