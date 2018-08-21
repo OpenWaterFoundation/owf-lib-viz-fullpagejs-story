@@ -9,8 +9,9 @@ See the visualization [deployed on OWF website](http://viz.openwaterfoundation.o
 * [Navbar](#navbar)
 * [Full Page](#full-page)
 * [Bootstrap](#bootstrap)
-* [Resources](#resources)
 * [Leaflet](#leaflet)
+* [Knightlab - StoryMap](#knightlab---storymap)
+* [Resources](#resources)
 
 ## Repository Contents:
 ```
@@ -18,8 +19,10 @@ See the visualization [deployed on OWF website](http://viz.openwaterfoundation.o
 │   ├── build-util/.............Folder contains scripts to view website locally and deploy to web.
 │   ├── site-basic-example/.....A basic FullPage example - can stand alone as website.
 │   |   ├── css/................CSS files for website.
+│   |   ├── data/ ..............Any necessary data files for visualizations.
 │   |   ├── images/.............Images used in the webiste.
 │   |   ├── js/.................Javascript files for the website.
+│   |   ├── webfonts/ ..........Some packages such as leaflet and bootstrap require added fonts
 │   |   ├── index.html..........Landing page for visualization.
 ```
 
